@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>入口</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+		border:0;}
+	body{
+		background:url(images/top_bg.jpg);}
+	#box{
+		width:100%;
+		margin:3% auto 0px auto;}
+	header{
+		text-align:center;}
+	header img{
+		width:70px;
+		height:50px;
+		}
+	#content{
+		width:100%;
+		margin-top:1%;
+		text-align: center;
+		}
+	 #content img{
+		width:600px;
+		height:500px;
+		opacity:0.3;
+		border-radius:6px;
+		}
+	footer p{
+		text-align:center;
+		color:#999;
+		font-size:12px;
+		margin-top:10px;}
+</style>
+</head>
+
+<body>
+<div id="box">
+    <header>
+        <img id="logo" src="images/logo.jpg" />
+    </header>
+    <div id="content">
+        <a href="首页.html"><img src="images/1.gif" /></a>
+        <a href="#"><img src="images/2.gif" /></a>
+    </div>
+    <footer>
+    	<p>西部开源技术中心</p>
+    </footer>
+</div>
+<script src="JS/sportFrame.js" type="text/javascript"></script>
+<script>
+window.onload=function(){
+	var obox=document.getElementById("content");
+	var aimg=obox.getElementsByTagName("img");
+	var timer=null;
+	for(var i=0;i<aimg.length;i++)
+	{
+		aimg[i].index=i;
+		aimg[i].onmouseover=function(){
+			
+			this.src="images/"+(this.index+1)+"-over.gif";
+		    sport(this,{opacity:100});
+			};
+		aimg[i].onmouseout=function(){
+			sport(this,{opacity:20});
+			this.src="images/"+(this.index+1)+".gif";
+			};
+	}
+	};
+</script>
+</body>
+</html>
